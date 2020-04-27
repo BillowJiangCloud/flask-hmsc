@@ -6,11 +6,10 @@ var user_login_ops = {
     eventBind:function(){
         $(".login_wrap .do-login").click(function(){
             var btn_target = $(this)
-            if (btn_target.hasClass("disabled")){
-                alert("请求正在处理，请稍后再试~~~~")
+            if (btn_target.hasClass("disabled")) {
+                alert("请求正在处理，请稍后再试~~~")
                 return;
             }
-
             var login_name = $(".login_wrap input[name=login_name]").val()
             var login_pwd = $(".login_wrap input[name=login_pwd]").val()
 
@@ -24,8 +23,7 @@ var user_login_ops = {
                 return
             }
 
-            btn_target.addClass("disabled")
-
+            btn_target.addClass("disabled");
 
             $.ajax({
                 url:common_ops.buildUrl("/user/login"),
@@ -36,8 +34,9 @@ var user_login_ops = {
                     btn_target.removeClass("disabled");
                     console.log(resp)
                     alert(resp.msg)
+                    window.location.reload()
                 },
-                errpr:function(resp){
+                error:function(error){
                     console.log(error)
                 }
             })
