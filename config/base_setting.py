@@ -6,18 +6,13 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 AUTH_COOKIE_NAME = "hmsc_1901C"
 
 # 设置拦截器忽略规则
-IGNORE_URLS = [
-    "^/user/login"
-]
-IGNORE_CHECK_LOGIN_URLS = [
-    "^/static",
-    "^/favicon.ico"
-]
+IGNORE_URLS = ["^/user/login"]
+IGNORE_CHECK_LOGIN_URLS = ["^/static", "^/favicon.ico"]
 
 PAGE_SIZE = 2
 
 UPLOAD = {
-    'ext':['jpg','gif','bmp','jpeg','png'],
-    'prefix_path':'\\web\\static\\upload',
-    'prefix_url':'\\static\\upload'    
+    'ext': ['jpg', 'gif', 'bmp', 'jpeg', 'png'],
+    'prefix_path': '\\web\\static\\upload',
+    'prefix_url': '\\static\\upload'
 }
